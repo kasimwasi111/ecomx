@@ -183,18 +183,6 @@ const header = () => {
             </div>
             {showMenu && (
               <div className="col-md-10 d-md-none mt-3">
-                {/* <div className="input-group mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Find products ..."
-                    aria-label="Find products ..."
-                    aria-describedby="basic-addon2"
-                  />
-                  <button className="input-group-text" id="basic-addon2">
-                    search
-                  </button>
-                </div> */}
                 <div className="menu-links mt-2">
                   <div className="mb-2">
                     <NavLink
