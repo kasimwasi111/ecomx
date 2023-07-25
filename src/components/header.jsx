@@ -215,21 +215,6 @@ const header = () => {
                     </NavLink>
                   </div>
                 </div>
-
-                <div className="menu-bar__actions">
-                  <div className="mb-2">
-                    <Link
-                      to=""
-                      className={
-                        location.pathname === "/" ? "active" : "not-active"
-                      }
-                      onClick={toggleMenu}
-                    >
-                      <img src={compare} alt="compare" className="d-none" />
-                      <span>New</span>
-                    </Link>
-                  </div>
-                </div>
               </div>
             )}
           </div>
