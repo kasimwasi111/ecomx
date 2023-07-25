@@ -63,7 +63,7 @@ const header = () => {
           <div className="row align-items-center m-0">
             <div className="col-md-2 d-flex justify-content-center">
               <button type="button" onClick={toggleMenu}>
-                <span className="navbar-toggler-icon">
+                <span className="navbar-toggler-icon d-md-none">
                   {showMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
                 </span>
               </button>
