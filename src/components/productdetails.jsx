@@ -78,7 +78,7 @@ const ProductDetails = () => {
 
               <div className="d-flex justify-content-center">
                 <button
-                  onClick={() => {
+                  onClick={(event) => {
                     addToCart(product.id);
                     event.target.classList.toggle("red");
                   }}

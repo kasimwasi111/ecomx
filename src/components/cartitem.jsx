@@ -38,9 +38,9 @@ const cartitem = (props) => {
               <div className="count-handler">
                 <button
                   className="btn btn-outline-secondary"
-                  onClick={() => addToCart(id)}
+                  onClick={() => removeToCart(id)}
                 >
-                  +
+                  -
                 </button>
                 <input
                   className="text-danger fs-4 form-control"
@@ -49,11 +49,12 @@ const cartitem = (props) => {
                     updateCartItemCount(Number(e.target.value), id)
                   }
                 />
+
                 <button
                   className="btn btn-outline-secondary"
-                  onClick={() => removeToCart(id)}
+                  onClick={() => addToCart(id)}
                 >
-                  -
+                  +
                 </button>
               </div>
               <button

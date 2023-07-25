@@ -162,11 +162,6 @@ const footer = () => {
                     Terms of Use
                   </Link>
                 </li>
-                <li className="list-inline-item">
-                  <Link to="#" className="text-dark">
-                    Contact Us
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
