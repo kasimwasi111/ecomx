@@ -92,20 +92,6 @@ const header = () => {
             </div>
 
             <div className="col-md-10 row col-lg-10">
-{/*               <div className="col-md-3 m-auto">
-                <div className="input-group d-none d-md-flex">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Find products ..."
-                    aria-label="Find products ..."
-                    aria-describedby="basic-addon2"
-                  />
-                  <button className="input-group-text" id="basic-addon2">
-                    search
-                  </button>
-                </div>
-              </div> */}
               <div className="col-md-6 m-auto">
                 <div className="menu-links mt-2 d-none d-md-flex d-lg-flex">
                   <div className="ms-auto gap-3">
