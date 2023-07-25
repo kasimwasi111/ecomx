@@ -62,11 +62,7 @@ const header = () => {
         <div className="container-xxl">
           <div className="row align-items-center m-0">
             <div className="col-md-2 d-flex justify-content-center">
-              <button
-                className="navbar-toggler d-md-none "
-                type="button"
-                onClick={toggleMenu}
-              >
+              <button type="button" onClick={toggleMenu}>
                 <span className="navbar-toggler-icon">
                   {showMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
                 </span>
