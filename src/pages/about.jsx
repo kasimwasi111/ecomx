@@ -6,7 +6,7 @@ import blog3 from "../assets/images/blog/blog-3.jpg";
 import blog4 from "../assets/images/blog/blog-4.jpg";
 import a6 from "../assets/images/about/a6.jpg";
 import video from "../assets/images/about/1.mp4";
-// import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee";
 import orders from "../assets/images/icons/icon1.png";
 import orders1 from "../assets/images/icons/icon2.png";
 import orders2 from "../assets/images/icons/icon3.png";
