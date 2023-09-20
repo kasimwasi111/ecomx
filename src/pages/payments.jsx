@@ -1,27 +1,25 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-// import pay from "../assets/images/pay/pay.png";
-// import { ShopContext } from "../components/shopcontext";
+import pay from "../assets/images/pay/pay.png";
+import { ShopContext } from "../components/shopcontext";
 
-const checkout = () => {
-  // const { getTotalCartProducts, getTotalCartAmount, resetCart } =
-  //   useContext(ShopContext);
-  // const totalAmount = getTotalCartAmount();
-  // const totalProducts = getTotalCartProducts();
+const payments = () => {
+  const { getTotalCartProducts, getTotalCartAmount, resetCart } =
+    useContext(ShopContext);
+  const totalAmount = getTotalCartAmount();
+  const totalProducts = getTotalCartProducts();
 
-  // const handlePay = () => {
-  //   window.alert(
-  //     `Thank you for your purchase of ${totalProducts} products for a total of $${totalAmount}. Your request has been received and is being processed.`
-  //   );
-  //   resetCart();
-  // };
-
+  const handlePay = () => {
+    window.alert(
+      `Thank you for your purchase of ${totalProducts} products for a total of $${totalAmount}. Your request has been received and is being processed.`
+    );
+    resetCart();
+  };
   return (
     <>
       <section className="checkout p-5">
         <div className="container-sm ">
           <div className="row d-flex justify-content-center">
-            {/* <div className="col-md-6">
+            <div className="col-md-6">
               <h1 className="mb-4 fs-3">Payment Method</h1>
               <div className="accordion" id="accordionExample">
                 <div className="card">
@@ -127,6 +125,15 @@ const checkout = () => {
                             />
                           </div>
                         </div>
+                        <div className="col-12 mt-5">
+                          <button
+                            id="button-linker"
+                            type="submit"
+                            onClick={handlePay}
+                          >
+                            Pay
+                          </button>
+                        </div>
                       </div>
                       <span className="text-muted certificate-text">
                         <i className="fa fa-lock"></i> Your transaction is
@@ -136,79 +143,6 @@ const checkout = () => {
                   </div>
                 </div>
               </div>
-            </div> */}
-
-            <div className="col-md-6 p-2">
-              <h1 className=" mt-3 mb-3 fs-3">
-                Fill the following details for shipping.
-              </h1>
-              <form className="row g-3 mb-3">
-                <div className="col-md-6">
-                  <label htmlFor="inputEmail4" className="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="inputEmail4"
-                    required
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label htmlFor="inputPassword4" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="inputPassword4"
-                    required
-                  />
-                </div>
-                <div className="col-12">
-                  <label htmlFor="inputAddress" className="form-label">
-                    Address
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputAddress"
-                    placeholder="1234 Main St"
-                  />
-                </div>
-                <div className="col-12">
-                  <label htmlFor="inputAddress2" className="form-label">
-                    Address 2
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputAddress2"
-                    placeholder="Apartment, studio, or floor"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label htmlFor="inputCity" className="form-label">
-                    City
-                  </label>
-                  <input type="text" className="form-control" id="inputCity" />
-                </div>
-                <div className="col-md-2">
-                  <label htmlFor="inputZip" className="form-label">
-                    Zip
-                  </label>
-                  <input type="text" className="form-control" id="inputZip" />
-                </div>
-                <div className="col-12 mt-5">
-                  <Link
-                    to="/payments"
-                    className="btn btn-primary"
-                    id="button-link"
-                  >
-                    Proceed to Pay
-                  </Link>
-                </div>
-              </form>
             </div>
           </div>
         </div>
@@ -217,4 +151,4 @@ const checkout = () => {
   );
 };
 
-export default checkout;
+export default payments;
