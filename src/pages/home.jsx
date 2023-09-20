@@ -61,7 +61,7 @@ const home = () => {
         </div>
       </section>
 
-      <section className="repair-services p-5">
+      {/* <section className="repair-services p-5">
         <div className="container-xxl">
           <div className="row ">
             <div className="repair-details text-center align-items-center">
@@ -73,7 +73,7 @@ const home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="new-arrivals p-4">
         <div className="container-xxl">

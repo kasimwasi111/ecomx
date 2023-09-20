@@ -30,9 +30,6 @@ const cartitem = (props) => {
               <p className="cart-item-id">
                 Product Number: <b className="text-center mb-3">{id}</b>
               </p>
-              <p className="cart-item-id">
-                Items in Stock: <b className="text-danger">{itemsInStock}</b>
-              </p>
             </div>
             <div className="p-3 d-flex justify-content-between align-items-center">
               <div className="count-handler">

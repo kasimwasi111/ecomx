@@ -6,8 +6,8 @@ import { CgShoppingCart } from "react-icons/cg";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { NavLink, useLocation } from "react-router-dom";
-import compare from "../assets/images/compare.svg";
 import logo from "../assets/images/supermart.png";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,6 +17,7 @@ const header = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
   return (
     <>
@@ -93,9 +94,9 @@ const header = () => {
                   <div className="ms-auto gap-3">
                     <NavLink
                       to="/"
-                      className={
+                      className={`nav-link ${
                         location.pathname === "/" ? "active" : "not-active"
-                      }
+                      }`}
                       onClick={toggleMenu}
                     >
                       HOME
@@ -104,9 +105,9 @@ const header = () => {
                   <div className="ms-auto gap-3">
                     <NavLink
                       to="/shop"
-                      className={
+                      className={`nav-link ${
                         location.pathname === "/shop" ? "active" : "not-active"
-                      }
+                      }`}
                       onClick={toggleMenu}
                     >
                       SHOP
@@ -115,9 +116,9 @@ const header = () => {
                   <div className="ms-auto gap-3">
                     <NavLink
                       to="/blog"
-                      className={
+                      className={`nav-link ${
                         location.pathname === "/blog" ? "active" : "not-active"
-                      }
+                      }`}
                       onClick={toggleMenu}
                     >
                       BLOG
@@ -126,23 +127,62 @@ const header = () => {
                   <div className="ms-auto gap-3">
                     <NavLink
                       to="/about"
-                      className={
+                      className={`nav-link ${
                         location.pathname === "/about" ? "active" : "not-active"
-                      }
+                      }`}
                       onClick={toggleMenu}
                     >
                       ABOUT
                     </NavLink>
                   </div>
+                  {isAuthenticated && (
+                    <div className="ms-auto gap-2 d-flex align-items-center">
+                      <div className="ms-3">
+                        <img
+                          src={user.picture}
+                          alt={user.name}
+                          className="rounded-circle"
+                          style={{ width: "30px", height: "30px" }}
+                        />
+                      </div>
+                      <div className="ms-2">
+                        <h3 style={{ fontSize: "16px" }}>{user.name}</h3>
+                      </div>
+                    </div>
+                  )}
+                  {isAuthenticated ? (
+                    <div className="ms-2">
+                      <button
+                        className="btn btn-danger btn-sm"
+                        style={{ width: "80px", height: "35px" }}
+                        onClick={() =>
+                          logout({
+                            logoutParams: { returnTo: window.location.origin },
+                          })
+                        }
+                      >
+                        Log Out
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="ms-auto gap-3">
+                      <button
+                        className="btn btn-primary btn-sm"
+                        onClick={() => loginWithRedirect()}
+                      >
+                        Log In
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="row d-flex justify-content-center">
                   <div className="col-12 col-md-2 d-none d-md-flex d-lg-flex m-auto">
                     <div
-                      className={
+                      className={`nav-link ${
                         location.pathname === "cart" ? "active" : "not-active"
-                      }
+                      }`}
                     >
                       <Link
                         onClick={toggleMenu}
@@ -163,6 +203,7 @@ const header = () => {
                 </div>
               </div>
             </div>
+
             {showMenu && (
               <div className="col-md-10 d-md-none mt-3">
                 <div className="menu-links mt-2">
@@ -211,6 +252,41 @@ const header = () => {
                     </NavLink>
                   </div>
                 </div>
+                {isAuthenticated && (
+                  <div className="ms-auto gap-3 d-flex align-items-center">
+                    <div className="ms-2">
+                      <h3 style={{ fontSize: "16px" }}>{user.name}</h3>
+                    </div>
+                  </div>
+                )}
+                {isAuthenticated ? (
+                  <div className="ms-auto gap-3">
+                    <button
+                      className="btn btn-danger btn-sm"
+                      style={{
+                        width: "60px",
+                        height: "25px",
+                        fontSize: "12px",
+                      }}
+                      onClick={() =>
+                        logout({
+                          logoutParams: { returnTo: window.location.origin },
+                        })
+                      }
+                    >
+                      Log Out
+                    </button>
+                  </div>
+                ) : (
+                  <div className="ms-auto gap-3">
+                    <button
+                      className="btn btn-primary btn-sm"
+                      onClick={() => loginWithRedirect()}
+                    >
+                      Log In
+                    </button>
+                  </div>
+                )}
               </div>
             )}
           </div>

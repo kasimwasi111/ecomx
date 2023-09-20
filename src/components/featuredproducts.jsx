@@ -24,7 +24,7 @@ const featuredproducts = () => {
                     <strike>${product.rate} </strike>
                   </p>
                 </div>
-                <div className="card-footer d-md-none">
+                <div className="card-footer d-md">
                   <div className="d-flex justify-content-between align-items-center">
                     <Link to="shop" className="m-auto">
                       View products
