@@ -21,7 +21,7 @@ const featuredproducts = () => {
                   <p className="text-danger fs-4">{product.status}</p>
                   <p className="price">
                     <span className="red"></span>{" "}
-                    <strike>${product.rate} </strike>
+                    <strike>{product.rate} </strike>
                   </p>
                 </div>
                 <div className="card-footer d-md">
