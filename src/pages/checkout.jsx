@@ -174,6 +174,7 @@ const checkout = () => {
                     className="form-control"
                     id="inputAddress"
                     placeholder="1234 Main St"
+                    required
                   />
                 </div>
                 <div className="col-12">
@@ -191,13 +192,23 @@ const checkout = () => {
                   <label htmlFor="inputCity" className="form-label">
                     City
                   </label>
-                  <input type="text" className="form-control" id="inputCity" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputCity"
+                    required
+                  />
                 </div>
                 <div className="col-md-2">
                   <label htmlFor="inputZip" className="form-label">
                     Zip
                   </label>
-                  <input type="text" className="form-control" id="inputZip" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputZip"
+                    required
+                  />
                 </div>
                 <div className="col-12 mt-5">
                   <Link
